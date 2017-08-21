@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <style media="screen">
+    table, input {
+      margin: 0 auto;
+      border: 1px solid gray;
+    }
+
+    input {
+      margin: 0 auto;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 5px;
+    }
+
+    #tabela {
+      margin: 0 auto;
+    }
+
+    #tabela, #tr-tabela, #td-tabela {
+      text-align: center;
+      border-collapse: collapse;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    #tr-tabela:nth-child(even){background-color: #f2f2f2}
+
+    th {
+      background-color: #0083BB;
+      color: white;
+      padding: 5px;
+    }
+
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title>Banco de Dados</title>
+  </head>
+  <body>
+    <form action="/api/usuarios/modificar/<%= dados._id %>" method="post">
+      <table>
+        <th colspan="2">Modificar Dados</th>
+        <tr>
+          <td><label for="nome">Nome</label></td>
+          <td><input type="text" name="nome" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <td><label for="nome">Login</label></td>
+          <td><input type="text" name="login" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <td><label for="nome">Senha</label></td>
+          <td><input type="text" name="senha" autocomplete="off"></td>
+        </tr>
+        <br>
+        <tr>
+          <td><button type="submit" name="button" id="btn_form">Enviar</button></td>
+          <td><a href="/api/usuarios"><button type="button" name="button">Cancelar</button></a></td>
+        </tr>
+      </table>
+    </form>
+    <br>
+    <table id="tabela">
+      <tr id="tr-tabela">
+        <th>Nome</th>
+        <th>Login</th>
+        <th>Senha</th>
+      </tr>
+        <tr id="tr-tabela">
+          <td id="td-tabela"><%= dados.nome %></td>
+          <td id="td-tabela"><%= dados.login %></td>
+          <td id="td-tabela"><%= dados.senha %></td>
+        </tr>
+    </table>
+  </body>
+</html>
